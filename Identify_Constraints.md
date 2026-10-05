@@ -1,0 +1,18 @@
+| Constraint ID | Constraint (Simple English) | Reason / Necessity |
+|---|---|---|
+| C1 | The crossing must remain open to road traffic when no train is approaching and no emergency condition exists. | This preserves normal road operation and avoids unnecessary delays during safe periods. |
+| C2 | The system must detect a train approaching the crossing before the train reaches the danger zone. | Early detection is necessary to trigger warning signals and close the barrier in time. |
+| C3 | Once a train is detected approaching, the warning lights and siren must activate within a required time window. | Drivers and pedestrians need enough warning time to stop and clear the crossing safely. |
+| C4 | The barrier must lower fully and lock in place before a train enters the level crossing. | A closed barrier physically prevents road vehicles from entering the track area when a train is near. |
+| C5 | The barrier must open only after the train has fully cleared the crossing and the track is confirmed safe. | This prevents vehicles from entering while a train is still occupying the crossing. |
+| C6 | If the system sees a train leaving the crossing, it must cancel the warning signals only after the track is clear. | Warning signals must not stop too early, or road users may still be endangered by a remaining train. |
+| C7 | The warning system must keep operating even if a single sensor gives a brief false reading, unless the fault is confirmed. | The level-crossing system must be robust against transient sensor noise and avoid unsafe shutdowns. |
+| C8 | If a track sensor fails or reports inconsistent data, the system must trigger a safe fallback state and raise an alarm. | A failed sensor can lead to wrong decisions; the safe action is to stop road traffic or request maintenance. |
+| C9 | If a barrier motor or actuator fails to move to the commanded position, the system must not continue normal operation. | A failed barrier can leave the crossing unsafe, so the system must detect and respond to mechanical faults. |
+| C10 | If communication between the controller and the railway/field devices is lost, the system must default to a safe operating mode. | Communication loss can prevent timely warnings or barrier control; fallback behavior reduces risk. |
+| C11 | If both warning and barrier controls are unavailable, the crossing must be treated as unsafe and the system must alarm the operator. | This ensures maintenance staff and operators know the crossing is not in a safe operating state. |
+| C12 | In an emergency stop or train emergency condition, the warning signals and barrier control must prioritize safety over normal operations. | Emergency situations require immediate protection of road users and railway traffic. |
+| C13 | The system must detect when a vehicle is stuck on the crossing and keep the barrier or warnings active until the obstruction is cleared. | Preventing a road user from being trapped on the crossing is essential for safety. |
+| C14 | The system must reject contradictory sensor inputs that suggest a train is both approaching and cleared at the same time. | Contradictory states can cause unsafe or inconsistent control actions. |
+| C15 | The barrier must not open while a train is approaching, even if the obstacle sensor indicates the crossing is clear. | Safety logic must prioritize train presence over any temporary false clear signal. |
+| C16 | The system must log key events such as train approach, warning activation, barrier movement, faults, and communication loss. | Event logging supports diagnosis, maintenance, and verification that safety constraints are being met. |
